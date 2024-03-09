@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  vault:
+    volumes:
+      - ../secrets/vault/config:/vault/config
+      - vault-file:/vault/file
+      - vault-logs:/vault/logs
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=${VAULT_DEV_ROOT_TOKEN_ID}
+    command: "server -dev"
+  database:
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  user:
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../backend/services/user/:/app
+    command: "npm run start"
+  prescription:
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../backend/services/prescription/:/app
+    command: "npm run start"
+  frontend:
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../frontend/app:/app
+    command: "npm run dev"
+
+volumes:
+  database:
+  vault-file:
+  vault-logs:

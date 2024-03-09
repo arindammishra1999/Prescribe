@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  vault:
+    volumes:
+      - ../secrets/vault/config:/vault/config
+      - vault-file:/vault/file
+      - vault-logs:/vault/logs
+    command: "server"
+  database:
+    volumes:
+      - database:/var/lib/postgresql/data
+  user:
+    build:
+      target: production
+    environment:
+      - NODE_ENV=production
+    command: "npm run start"
+  prescription:
+    build:
+      target: production
+    environment:
+      - NODE_ENV=production
+    command: "npm run start"
+  frontend:
+    build:
+      target: production
+    environment:
+      - NODE_ENV=production
+    command: "npm run start"
+
+volumes:
+  database:
+  vault-file:
+  vault-logs:
