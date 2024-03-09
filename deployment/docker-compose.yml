@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  vault:
+    image: hashicorp/vault:1.15
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+  database:
+    build:
+      context: ../database
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    depends_on:
+      - vault
+  user:
+    build:
+      context: ../backend/services/user
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+  prescription:
+    build:
+      context: ../backend/services/user
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    depends_on:
+      - database
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    depends_on:
+      - user
+      - prescription
