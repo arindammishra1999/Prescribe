@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-2 Create preliminary Docker files">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seed.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.override.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secrets/vault/config/config.hcl" beforeDir="false" afterPath="$PROJECT_DIR$/secrets/vault/config/config.hcl" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="PRES-2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;rohan.amjad&quot;,
+      &quot;fullname&quot;: &quot;Rohan Amjad&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://csgit.ucalgary.ca/rohan.amjad/seng513-202401-group-2.git&quot;,
+    &quot;second&quot;: &quot;4413355a-0e8c-4e36-bcb2-5ac35be850c9&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2d7MYosR4XrpJW9WwF09vMKe0MI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "PRES-3",
+    "last_opened_file_path": "/Users/rohanamjad/Desktop/Software Engineering/Winter 2024/SENG 513/Project/Prescribe/backend/services/user",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/services/user" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="" />
+      <created>1709354716532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709354716532</updated>
+      <workItem from="1709354717784" duration="144000" />
+      <workItem from="1709354953671" duration="2471000" />
+      <workItem from="1709360720824" duration="3235000" />
+      <workItem from="1709916622137" duration="4514000" />
+      <workItem from="1709945177105" duration="15417000" />
+      <workItem from="1709975485836" duration="180000" />
+      <workItem from="1709975679679" duration="42000" />
+      <workItem from="1710994618496" duration="12205000" />
+    </task>
+    <task id="LOCAL-00001" summary="PRES-2 Setup basic Express.js and Next.js project structure">
+      <option name="closed" value="true" />
+      <created>1709973579687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709973579687</updated>
+    </task>
+    <task id="LOCAL-00002" summary="PRES-2 Create preliminary Docker files">
+      <option name="closed" value="true" />
+      <created>1709974032978</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709974032978</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="PRES-2 Setup basic Express.js and Next.js project structure" />
+    <MESSAGE value="PRES-2 Create preliminary Docker files" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRES-2 Create preliminary Docker files" />
+  </component>
+</project>
