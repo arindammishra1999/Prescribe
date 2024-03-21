@@ -1,3 +1,4 @@
+# frontend/Dockerfile
 FROM node:20.11.1 AS base
 
 WORKDIR /app
