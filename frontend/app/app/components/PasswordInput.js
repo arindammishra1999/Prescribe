@@ -15,7 +15,7 @@ export default function PasswordInput() {
       <input
         type={passwordShown ? "text" : "password"}
         placeholder="Password"
-        className="w-full border border-gray-300 p-4 rounded-full pr-10"
+        className="w-full border border-gray-300 p-4 rounded-full focus:border-teal-900 focus:outline-none"
       />
       <IconContext.Provider value={{ size: "2em", color: "#134e4a" }}>
         <div className="absolute inset-y-2/3 right-0 pr-3 flex items-center text-sm leading-5">
