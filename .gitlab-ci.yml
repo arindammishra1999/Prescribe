@@ -5,8 +5,6 @@ build-images:
     stage: build
     tags:
       - docker-build
-    services:
-      - docker:dind
     script: 
         - |
             cd ./deployment
