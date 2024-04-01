@@ -1,14 +1,21 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import PasswordInput from "@components/PasswordInput";
 import EmailInput from "@components/EmailInput";
+import DropDown from "../components/DropDown";
 
 function LoginPage() {
+  const [userType, setUserType] = useState("");
   return (
     <>
       <h2 className="text-2xl font-bold mb-4">Login</h2>
       <div>
+        <DropDown
+          options={["Patient", "Doctor", "Pharmacy"]}
+          fieldName={"Are you a..."}
+          onSelect={setUserType}
+        />
         <EmailInput />
         <PasswordInput />
         <div className="mb-4">
