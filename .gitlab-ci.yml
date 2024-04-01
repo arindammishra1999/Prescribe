@@ -9,5 +9,5 @@ build-images:
         - |
             cd ./deployment
             export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-            docker compose -f docker-compose.yml -f docker-compose.prod.yml build
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml build --no-cache
 
