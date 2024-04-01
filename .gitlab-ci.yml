@@ -1,0 +1,15 @@
+stages:
+  - build
+
+build-images:
+    stage: build
+    tags:
+      - docker-build
+    services:
+      - docker:dind
+    script: 
+        - |
+            cd ./deployment
+            export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml build
+
