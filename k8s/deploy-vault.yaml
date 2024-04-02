@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-deployment
+  namespace: prescribe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prescribe
+  template:
+    metadata:
+      labels:
+        app: prescribe
+    spec:
+      containers:
+        - name: vault
+          image: k3d-myregistry.localhost:12345/hashicorp/vault:v0.1
+          ports:
+            - containerPort: 8200
+          imagePullPolicy: Always
