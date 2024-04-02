@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 
-import DropDown from "@/app/components/DropDown";
-import TextInput from "@/app/components/TextInput";
+import DropDown from "../../components/DropDown";
+import TextInput from "../../components/TextInput";
 
 function InfoPage() {
   const [userType, setUserType] = useState("");

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import PasswordInput from "@components/PasswordInput";
-import EmailInput from "@components/EmailInput";
+import PasswordInput from "../components/PasswordInput";
+import EmailInput from "../components/EmailInput";
 
 function SignupPage() {
   return (

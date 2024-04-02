@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import EmailInput from "@components/EmailInput";
+import EmailInput from "../../components/EmailInput";
 
 function ResetPasswordPage() {
   return (

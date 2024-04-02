@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 
-import PasswordInput from "@components/PasswordInput";
-import EmailInput from "@components/EmailInput";
+import PasswordInput from "../components/PasswordInput";
+import EmailInput from "../components/EmailInput";
 import DropDown from "../components/DropDown";
 
 function LoginPage() {
@@ -31,7 +31,7 @@ function LoginPage() {
           </button>
         </div>
         <p>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a href="#" className="text-teal-900">
             Register
           </a>

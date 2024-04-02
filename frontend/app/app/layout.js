@@ -1,9 +1,16 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Fredoka } from "next/font/google";
 
 const sfProDisplay = localFont({
   src: "/fonts/SF-Pro-Display-Regular.otf",
   weights: [400],
+});
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-fredoka",
 });
 
 export const metadata = {
@@ -14,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={sfProDisplay.className}>{children}</body>
+      <main className={`${sfProDisplay.className} ${fredoka.variable}`}>
+        {children}
+      </main>
     </html>
   );
 }
