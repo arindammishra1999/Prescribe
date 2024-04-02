@@ -26,8 +26,6 @@ services:
   frontend:
     build:
       target: production
-    environment:
-      - NODE_ENV=production
     command: "npm run start"
 
 volumes:

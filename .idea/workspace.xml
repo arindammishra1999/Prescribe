@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-2 Create preliminary Docker files">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seed.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.override.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secrets/vault/config/config.hcl" beforeDir="false" afterPath="$PROJECT_DIR$/secrets/vault/config/config.hcl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/next.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +53,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "PRES-3",
-    "last_opened_file_path": "/Users/rohanamjad/Desktop/Software Engineering/Winter 2024/SENG 513/Project/Prescribe/backend/services/user",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/rohanamjad/Downloads/Prescribe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,6 +84,7 @@
       <workItem from="1709975485836" duration="180000" />
       <workItem from="1709975679679" duration="42000" />
       <workItem from="1710994618496" duration="12205000" />
+      <workItem from="1712034242990" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="PRES-2 Setup basic Express.js and Next.js project structure">
       <option name="closed" value="true" />
