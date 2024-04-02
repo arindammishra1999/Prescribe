@@ -11,6 +11,10 @@ services:
   database:
     volumes:
       - database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=prescribe
   user:
     build:
       target: production
