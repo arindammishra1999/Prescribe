@@ -2,7 +2,7 @@ import React from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 const Navbar = ({ tabs, options }) => {
   return (
-    <div className="fixed bottom-0 z- w-screen md:w-64 flex flex-row pt-3 text-black md:flex-col border-black border-2 bg-white md:justify-between md:h-screen md:p-8 md:bg-teal-900 md:text-white">
+    <div className="bottom-0 z-10 w-screen md:w-64 flex flex-row pt-3 text-black md:flex-col border-black border-2 bg-white md:justify-between md:h-screen md:p-8 md:bg-teal-900 md:text-white">
       <div className="logo hidden md:block">
         <h1 className="text-4xl text-center font-bold font-fredoka">
           Prescribe

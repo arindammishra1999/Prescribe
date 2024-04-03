@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const TextInput = ({ onInputChange, placeholder, fieldName }) => {
+const TextInput = ({
+  onInputChange,
+  placeholder,
+  fieldName,
+  type = "text",
+}) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
@@ -13,7 +18,7 @@ const TextInput = ({ onInputChange, placeholder, fieldName }) => {
     <div className="mb-4">
       <h6 className="ml-2">{fieldName}</h6>
       <input
-        type="text"
+        type={type}
         value={inputValue}
         onChange={handleInputChange}
         placeholder={placeholder}
