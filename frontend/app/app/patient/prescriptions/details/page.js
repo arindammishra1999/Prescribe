@@ -3,7 +3,7 @@ import React from "react";
 import PrescriptionCard from "../../../components/PrescriptionCard";
 import { IoArrowBack } from "react-icons/io5";
 import { QRCodeSVG } from "qrcode.react";
-const PrescriptioNDetailsPage = () => {
+const PrescriptionDetailsPage = () => {
   const prescription = {
     id: 1,
     name: "Drug Z",
@@ -49,4 +49,4 @@ const PrescriptioNDetailsPage = () => {
   );
 };
 
-export default PrescriptioNDetailsPage;
+export default PrescriptionDetailsPage;

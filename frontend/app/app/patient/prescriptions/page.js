@@ -38,9 +38,6 @@ const PrescriptionPage = () => {
   return (
     <div className="mx-auto p-4 flex flex-col justify-center items-center min-h-screen gap-5">
       <h1 className="text-3xl font-bold mb-4">Prescriptions</h1>
-      <div className="bg-white p-3 rounded-3xl">
-        <QRCodeSVG value="https://reactjs.org/" />
-      </div>
       <div className="flex flex-col gap-5 w-fit">
         {prescriptions.map((prescription) => (
           <PrescriptionCard prescription={prescription} />
