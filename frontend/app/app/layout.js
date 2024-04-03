@@ -1,6 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Fredoka } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const sfProDisplay = localFont({
   src: "/fonts/SF-Pro-Display-Regular.otf",
@@ -21,9 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <main className={`${sfProDisplay.className} ${fredoka.variable}`}>
+      <body className={`${sfProDisplay.className} ${fredoka.variable}`}>
         {children}
-      </main>
+      </body>
     </html>
   );
 }
