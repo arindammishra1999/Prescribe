@@ -24,9 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <main className={`${sfProDisplay.className} ${fredoka.variable}`}>
+      <body className={`${sfProDisplay.className} ${fredoka.variable}`}>
         {children}
-      </main>
+      </body>
     </html>
   );
 }
