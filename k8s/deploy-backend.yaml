@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secret
+  namespace: prescribe
+type: Opaque
+data:
+  postgres-password: MTIzNA==  # Base64 encoded value of "1234"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: backend-volume
+  namespace: prescribe
+  labels:
+    app: prescribe
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/k3dvol"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgress-pvc
+  namespace: prescribe
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: prescribe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prescribe
+  template:
+    metadata:
+      labels:
+        app: prescribe
+    spec:
+      volumes:
+        - name: db-storage
+          persistentVolumeClaim:
+            claimName: postgress-pvc
+      containers:
+        - name: database
+          image: k3d-myregistry.localhost:12345/deployment-database:v0.1
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: "/var/lib/postgresql/data"
+              name: db-storage
+          env:
+            - name: POSTGRES_USER
+              value: root
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-password
+            - name: POSTGRES_DB
+              value: prescribe
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: prescribe
+spec:
+  selector:
+    app: prescribe  
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432  
