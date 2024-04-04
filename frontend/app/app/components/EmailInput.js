@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 export default function EmailInput() {
   return (
     <div className="mb-4">
@@ -7,7 +5,7 @@ export default function EmailInput() {
       <input
         type="email"
         placeholder="john@example.com"
-        className="w-full border border-gray-300 p-4 rounded-full"
+        className="w-full border border-gray-300 p-4 rounded-full focus:border-teal-900 focus:outline-none"
       />
     </div>
   );

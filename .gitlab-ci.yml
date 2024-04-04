@@ -1,0 +1,13 @@
+stages:
+  - build
+
+build-images:
+    stage: build
+    tags:
+      - docker-build
+    script: 
+        - |
+            cd ./deployment
+            export POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml build --no-cache
+
