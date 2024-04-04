@@ -15,13 +15,20 @@ const Page = () => {
     // More user info can be added here
   };
 
+
+
   return (
 <div className="px-8 pt-8 pb-0 flex flex-col justify-end min-h-screen bg-white">
     {/* Flex container for the welcome message that takes up 20% of the parent container's height */}
+    <div className="logo md:hidden">
+      <h1 className="text-4xl text-center font-bold font-fredoka text-teal-900">
+      Prescribe
+      </h1>
+    </div>
     <div className="px-8 pt-8 pb-0 flex-col justify-center items-center w-full">
-        <h1 className="text-4xl text-left font-sfProDisplay font-medium mb-8">
-            Welcome Brentwood Pharmacy!
-        </h1>
+      <h1 className="text-4xl text-left font-sfProDisplay font-medium mb-8">
+        Welcome Brentwood Pharmacy!
+      </h1>
     </div>
     <div className="px-8 pt-0 pb-8 flex flex-1 w-full h-full">
         <div className="mx-auto flex grow-1 p-8 justify-center items-center w-full border-4 border-teal-900 rounded-3xl">

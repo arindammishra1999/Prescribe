@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
     },
     {
       title: "Past Orders",
-      link: "/profile",
+      link: "/pharmacist/pastOrders",
       icon: <FaRegClock />,
     },
     {
