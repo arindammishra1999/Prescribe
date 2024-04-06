@@ -9,6 +9,8 @@ services:
       - vault-logs:/vault/logs
     command: "server"
   database:
+    build:
+      target: base
     volumes:
       - database:/var/lib/postgresql/data
     environment:
