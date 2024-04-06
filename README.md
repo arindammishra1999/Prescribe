@@ -15,6 +15,20 @@ project.
 This project uses HashiCorp Vault to store secrets and dynamic database credentials.
 This project requires you to have `docker` and `docker compose` installed on your host machine.
 
+## Initial Dev Environment Setup
+
+You will need to install the node modules for the frontend and backend services before spinning up the containers. This
+is specific to the development environment and is not required for the production environment. In production, docker will
+automatically install the node modules in the docker images. By default running `docker compose up -d` will spin up development
+containers.
+
+Run the following command in the `frontend/app`, `backend/services/user`, and `backend/services/prescription`
+directories.
+
+```bash
+npm install
+```
+
 ## Setting up HashiCorp Vault and the PostgreSQL Database
 
 1. Before you start, please set the following environment variables in your shell:
