@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-2 Create preliminary Docker files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/next.config.mjs" afterDir="false" />
+    <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-12 Remove NODE_ENV environment variable from docker-compose.prod.yml and ignore linting during builds">
+      <change afterPath="$PROJECT_DIR$/frontend/app/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/prescription/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/prescription/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/prescription/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rohanamjad/Downloads/Prescribe",
+    "last_opened_file_path": "/Users/rohanamjad/Downloads/Prescribe/frontend/app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,6 +70,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/app" />
       <recent name="$PROJECT_DIR$/backend/services/user" />
     </key>
   </component>
