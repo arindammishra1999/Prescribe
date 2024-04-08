@@ -7,8 +7,12 @@ services:
       - ../secrets/vault/config:/vault/config
       - vault-file:/vault/file
       - vault-logs:/vault/logs
+    environment:
+      - VAULT_ADDR=http://127.0.0.1:8200
     command: "server"
   database:
+    build:
+      target: base
     volumes:
       - database:/var/lib/postgresql/data
     environment:

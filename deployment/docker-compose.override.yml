@@ -4,12 +4,12 @@ version: "3.8"
 services:
   vault:
     volumes:
+      - ../secrets/vault/config:/vault/config
       - vault-file:/vault/file
       - vault-logs:/vault/logs
     environment:
-      - VAULT_DEV_ROOT_TOKEN_ID=${VAULT_DEV_ROOT_TOKEN_ID}
       - VAULT_ADDR=http://127.0.0.1:8200
-    command: "server -dev"
+    command: "server"
   database:
     build:
       target: development
@@ -20,18 +20,24 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=prescribe
   user:
+    build:
+      target: base
     environment:
       - NODE_ENV=development
     volumes:
       - ../backend/services/user/:/app
     command: "npm run start"
   prescription:
+    build:
+      target: base
     environment:
       - NODE_ENV=development
     volumes:
       - ../backend/services/prescription/:/app
     command: "npm run start"
   frontend:
+    build:
+      target: base
     environment:
       - NODE_ENV=development
     volumes:

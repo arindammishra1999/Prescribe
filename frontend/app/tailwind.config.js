@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         fredoka: ["var(--font-fredoka)", "monospace"],
       },
+      width: {
+        '3/20': '15%', // 3/20 is equivalent to 15%
+      },
     },
   },
   plugins: [],
