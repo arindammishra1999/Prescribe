@@ -5,10 +5,11 @@ services:
   vault:
     volumes:
       - ../secrets/vault/config:/vault/config
+      - ../secrets/vault/policies:/vault/policies
       - vault-file:/vault/file
       - vault-logs:/vault/logs
     environment:
-      - VAULT_ADDR=http://127.0.0.1:8200
+      - VAULT_ADDR=http://0.0.0.0:8200
     command: "server"
   database:
     build:
@@ -24,17 +25,21 @@ services:
       target: base
     environment:
       - NODE_ENV=development
+      - ROLE_ID=${ROLE_ID}
+      - SECRET_ID=${SECRET_ID}
     volumes:
       - ../backend/services/user/:/app
-    command: "npm run start"
+    command: "npm run dev"
   prescription:
     build:
       target: base
     environment:
       - NODE_ENV=development
+      - ROLE_ID=${ROLE_ID}
+      - SECRET_ID=${SECRET_ID}
     volumes:
       - ../backend/services/prescription/:/app
-    command: "npm run start"
+    command: "npm run dev"
   frontend:
     build:
       target: base
