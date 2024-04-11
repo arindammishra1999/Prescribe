@@ -10,18 +10,18 @@ const authorizeMiddleware = (roles) => (req, res, next) => {
         }, (error, decoded) => {
             if (error) {
                 console.error(error);
-                return res.status(401).send(error);
+                return res.status(401).send({error: error});
             }
             console.log('Token decoded: ', decoded);
             if (roles.includes(decoded.role.toLowerCase())) {
                 next();
             } else {
-                return res.status(403).send('Forbidden');
+                return res.status(403).send({error: 'Forbidden'});
             }
         });
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Internal server error');
+        return res.status(500).send({error: 'Internal server error'});
     }
 }
 

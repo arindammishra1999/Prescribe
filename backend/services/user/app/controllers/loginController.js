@@ -3,19 +3,19 @@ const loginService = require('../services/loginService.js');
 
 const loginController = async (req, res) => {
     try {
-        const {id, password, role} = req.body;
+        const {user, role} = req.body;
 
-        if (!id || !role || !password) {
-            return res.status(400).send('Missing required fields');
+        if (!user.id || !user.password || !role) {
+            return res.status(400).send({error: 'Missing required fields'});
         }
 
-        const user = await loginService(id, password, role);
+        const {user: authUser, error} = await loginService(user.id, user.password, role);
 
-        if (!user) {
-            return res.status(401).send('Unauthorized');
+        if (error) {
+            return res.status(401).send({error: error});
         }
 
-        jwt.sign({id, role}, process.env.PRIVATE_KEY, {
+        jwt.sign({id: user.id, role}, process.env.PRIVATE_KEY, {
             algorithm: 'RS256',
             expiresIn: '1h',
             issuer: 'user-service',
@@ -23,14 +23,14 @@ const loginController = async (req, res) => {
         }, (error, token) => {
             if (error) {
                 console.error(error);
-                return res.status(500).send(error);
+                return res.status(500).send({error: error});
             }
-            console.log(`Token: ${token} created for ${id}`);
-            return res.status(200).send({token, user});
+            console.log(`Token: ${token} created for ${user.id}`);
+            return res.status(200).send({token, user: authUser});
         });
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Internal server error');
+        return res.status(500).send({error: 'Internal server error'});
     }
 }
 
