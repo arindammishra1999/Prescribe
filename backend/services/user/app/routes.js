@@ -5,8 +5,5 @@ const router = require('express').Router();
 
 router.post('/login', loginController);
 router.post('/register', registerController);
-router.get('/protected', authorizeMiddleware(['patient']), (req, res) => {
-    res.status(200).send('Protected route');
-});
 
 module.exports = router;

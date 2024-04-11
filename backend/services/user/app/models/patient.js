@@ -33,6 +33,9 @@ const Patient = sequelize.define('patient', {
         type: DataTypes.STRING(256),
         allowNull: false,
         unique: true
+    },
+    default_pharmacy: {
+        type: DataTypes.STRING(20),
     }
 });
 

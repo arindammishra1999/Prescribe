@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const {DataTypes} = require('sequelize');
 const sequelize = require('./index.js');
 
 const Pharmacy = sequelize.define('pharmacy', {
