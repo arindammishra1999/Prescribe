@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const verifyTokenController = async (req, res) => {
+const authorizeMiddleware = (roles) => (req, res, next) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
         jwt.verify(token, process.env.PUBLIC_KEY, {
@@ -13,7 +13,11 @@ const verifyTokenController = async (req, res) => {
                 return res.status(401).send(error);
             }
             console.log('Token decoded: ', decoded);
-            return res.status(200);
+            if (roles.includes(decoded.role.toLowerCase())) {
+                next();
+            } else {
+                return res.status(403).send('Forbidden');
+            }
         });
     } catch (error) {
         console.error(error);
@@ -21,4 +25,4 @@ const verifyTokenController = async (req, res) => {
     }
 }
 
-module.exports = verifyTokenController;
+module.exports = authorizeMiddleware;

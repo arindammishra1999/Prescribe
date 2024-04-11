@@ -3,19 +3,19 @@ const loginService = require('../services/loginService.js');
 
 const loginController = async (req, res) => {
     try {
-        const {id, password, type} = req.body;
+        const {id, password, role} = req.body;
 
-        if (!id || !type || !password) {
+        if (!id || !role || !password) {
             return res.status(400).send('Missing required fields');
         }
 
-        const user = await loginService(id, password, type);
+        const user = await loginService(id, password, role);
 
         if (!user) {
             return res.status(401).send('Unauthorized');
         }
 
-        jwt.sign({id, type}, process.env.PRIVATE_KEY, {
+        jwt.sign({id, role}, process.env.PRIVATE_KEY, {
             algorithm: 'RS256',
             expiresIn: '1h',
             issuer: 'user-service',
