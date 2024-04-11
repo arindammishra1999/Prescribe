@@ -18,7 +18,7 @@ export default function PasswordInput({ confirm }) {
         className="w-full border border-gray-300 p-4 rounded-full focus:border-teal-900 focus:outline-none"
       />
       <IconContext.Provider value={{ size: "2em", color: "#134e4a" }}>
-        <div className="absolute inset-y-2/3 right-0 pr-3 flex items-center text-sm leading-5">
+        <div className="absolute inset-y-2/3 right-0 pr-3 flex items-center text-sm leading-5 text-xs">
           {passwordShown ? (
             <FaEyeSlash
               onClick={togglePasswordVisibility}
