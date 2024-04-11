@@ -3,7 +3,7 @@ const Prescriber = require('../models/Prescriber.js');
 const Pharmacy = require('../models/Pharmacy.js');
 const argon = require('argon2');
 
-async function authenticate(id, password, type, model) {
+async function authenticate(id, password, role, model) {
     try {
         const user = await model.findByPk(id);
 
@@ -15,11 +15,11 @@ async function authenticate(id, password, type, model) {
         const {password: hashedPassword, ...rest} = user.dataValues;
 
         if (await argon.verify(hashedPassword, password)) {
-            console.log(`${type}: ${id} password verified`);
+            console.log(`${role}: ${id} password verified`);
             return rest;
         }
 
-        console.log(`${type}: ${id} password not verified`);
+        console.log(`${role}: ${id} password not verified`);
         return null;
     } catch (error) {
         console.error(error);
@@ -27,16 +27,16 @@ async function authenticate(id, password, type, model) {
 
 }
 
-async function loginService(id, password, type) {
+async function loginService(id, password, role) {
     try {
-        if (type.toLowerCase() === 'patient') {
-            return await authenticate(id, password, type, Patient);
-        } else if (type.toLowerCase() === 'prescriber') {
-            return await authenticate(id, password, type, Prescriber);
-        } else if (type.toLowerCase() === 'pharmacy') {
-            return await authenticate(id, password, type, Pharmacy);
+        if (role.toLowerCase() === 'patient') {
+            return await authenticate(id, password, role, Patient);
+        } else if (role.toLowerCase() === 'prescriber') {
+            return await authenticate(id, password, role, Prescriber);
+        } else if (role.toLowerCase() === 'pharmacy') {
+            return await authenticate(id, password, role, Pharmacy);
         }
-        console.log(`Type: ${type} not recognized`);
+        console.log(`Type: ${role} not recognized`);
         return null
     } catch (error) {
         console.error(error);
