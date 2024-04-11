@@ -8,7 +8,7 @@ async function authenticate(id, password, role, model) {
         const user = await model.findByPk(id);
 
         if (!user) {
-            console.log(`${type}: ${id} not found`);
+            console.log(`${role}: ${id} not found`);
             return null;
         }
 
