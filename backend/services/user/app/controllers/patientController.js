@@ -1,7 +1,8 @@
 const {
     getAllPatientsService,
     getPatientByIdService,
-    updateDefaultPharmacyService
+    updateDefaultPharmacyService,
+    getPatientByQRService
 } = require('../services/patientService.js');
 
 const getAllPatientsController = async (req, res) => {
@@ -51,11 +52,32 @@ const updateDefaultPharmacyController = async (req, res) => {
         console.error(error);
         return res.status(500).send({error: 'Internal server error'});
     }
+}
 
+const getPatientByQRController = async (req, res) => {
+    try {
+        const {qr_code_hash} = req.body;
+
+        if (!qr_code_hash) {
+            return res.status(400).send({error: 'Missing required fields'});
+        }
+
+        const {patient, error} = await getPatientByQRService(qr_code_hash);
+
+        if (error) {
+            return res.status(404).send({error: error});
+        }
+
+        return res.status(200).send(patient);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({error: 'Internal server error'});
+    }
 }
 
 module.exports = {
     getAllPatientsController,
     getPatientByIdController,
-    updateDefaultPharmacyController
+    updateDefaultPharmacyController,
+    getPatientByQRController
 };
