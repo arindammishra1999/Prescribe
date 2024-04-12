@@ -65,7 +65,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/services/user" />
@@ -232,6 +232,7 @@
     <MESSAGE value="PRES-18 Reduce the Vault database role TTL and the AppRole token TTL in README.md" />
     <MESSAGE value="PRES-18 Install body-parser and jsonwebtoken packages for backend services" />
     <MESSAGE value="PRES-21 Change 'type' to 'role' in loginController.js and loginService.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="PRES-21 Change 'type' to 'role' in loginController.js and loginService.js" />
+    <MESSAGE value="PRES-24 Add default_pharmacy field to Patient in Database and update patient.js model in User service" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRES-24 Add default_pharmacy field to Patient in Database and update patient.js model in User service" />
   </component>
 </project>
