@@ -1,4 +1,8 @@
-const {createPrescriptionService, updatePrescriptionService} = require('../services/prescriptionService.js');
+const {
+    createPrescriptionService,
+    updatePrescriptionService,
+    getPrescriptionByQRService
+} = require('../services/prescriptionService.js');
 
 const createPrescriptionController = async (req, res) => {
     try {
@@ -39,7 +43,29 @@ const updatePrescriptionController = async (req, res) => {
     }
 }
 
+const getPrescriptionByQRController = async (req, res) => {
+    try {
+        const {qr_code_hash} = req.body;
+
+        if (!qr_code_hash) {
+            return res.status(400).send({error: 'Missing required fields'});
+        }
+
+        const {prescription, error} = await getPrescriptionByQRService(qr_code_hash);
+
+        if (error) {
+            return res.status(404).send({error: error});
+        }
+
+        return res.status(200).send(prescription);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({error: 'Internal server error'});
+    }
+}
+
 module.exports = {
     createPrescriptionController,
-    updatePrescriptionController
+    updatePrescriptionController,
+    getPrescriptionByQRController
 };
