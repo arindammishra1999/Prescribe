@@ -19,7 +19,7 @@ router.get('/patients', authorizeMiddleware(['prescriber']), getAllPatientsContr
 router.get('/patient/:id', authorizeMiddleware(['prescriber']), getPatientByIdController);
 router.put('/patient/:id/update-default-pharmacy', authorizeMiddleware(['patient']), updateDefaultPharmacyController);
 router.get('/patient-qr/', authorizeMiddleware(['prescriber']), getPatientByQRController);
-router.get('/pharmacies', authorizeMiddleware(['patient', 'prescriber']), getAllPharmaciesController);
-router.get('/pharmacy/:id', authorizeMiddleware(['patient', 'prescriber']), getPharmacyByIdController);
+router.get('/pharmacies', authorizeMiddleware(['patient', 'prescriber', 'pharmacy']), getAllPharmaciesController);
+router.get('/pharmacy/:id', authorizeMiddleware(['patient', 'prescriber', 'pharmacy']), getPharmacyByIdController);
 
 module.exports = router;
