@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import PasswordInput from "../components/PasswordInput";
 import IdInput from "../components/IdInput";
@@ -19,12 +19,11 @@ function SignInPage() {
   const roleApiMapping = {
     Patient: "Patient",
     Doctor: "Prescriber",
-    Pharmacist: "Pharmacy" 
+    Pharmacist: "Pharmacy",
   };
 
   const onSubmit = async () => {
     const apiRole = roleApiMapping[role];
-    
     login(id, password, apiRole)
       .then((response) => {
         if (response) {
