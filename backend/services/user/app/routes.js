@@ -3,7 +3,8 @@ const registerController = require('./controllers/registerController.js');
 const {
     getAllPatientsController,
     getPatientByIdController,
-    updateDefaultPharmacyController
+    updateDefaultPharmacyController,
+    getPatientByQRController
 } = require('./controllers/patientController.js');
 const {
     getAllPharmaciesController,
@@ -17,6 +18,7 @@ router.post('/register', registerController);
 router.get('/patients', authorizeMiddleware(['prescriber']), getAllPatientsController);
 router.get('/patient/:id', authorizeMiddleware(['prescriber']), getPatientByIdController);
 router.put('/patient/:id/update-default-pharmacy', authorizeMiddleware(['patient']), updateDefaultPharmacyController);
+router.get('/patient-qr/', authorizeMiddleware(['prescriber']), getPatientByQRController);
 router.get('/pharmacies', authorizeMiddleware(['patient', 'prescriber']), getAllPharmaciesController);
 router.get('/pharmacy/:id', authorizeMiddleware(['patient', 'prescriber']), getPharmacyByIdController);
 

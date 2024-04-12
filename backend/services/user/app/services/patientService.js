@@ -13,7 +13,7 @@ async function getAllPatientsService() {
 }
 
 async function getPatientByIdService(id) {
-    const patient = Patient.findByPk(id, {
+    const patient = await Patient.findByPk(id, {
         attributes: {exclude: ['password']}
     });
 
@@ -44,8 +44,22 @@ async function updateDefaultPharmacyService(id, pharmacy_id) {
     return {patient: patient, error: null};
 }
 
+async function getPatientByQRService(qrCodeHash) {
+    const patient = await Patient.findOne({
+        where: {qr_code_hash: qrCodeHash},
+        attributes: {exclude: ['password']}
+    });
+
+    if (!patient) {
+        return {patient: null, error: 'Patient not found'};
+    }
+
+    return {patient: patient, error: null};
+}
+
 module.exports = {
     getAllPatientsService,
     getPatientByIdService,
-    updateDefaultPharmacyService
+    updateDefaultPharmacyService,
+    getPatientByQRService
 };
