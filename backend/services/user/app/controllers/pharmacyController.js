@@ -34,4 +34,5 @@ const getPharmacyByIdController = async (req, res) => {
 module.exports = {
     getAllPharmaciesController,
     getPharmacyByIdController
-}
+};
+

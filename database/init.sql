@@ -39,7 +39,7 @@ CREATE TABLE Prescriptions (
     refills INT DEFAULT 0,
     status VARCHAR(50),
     date_issued DATE NOT NULL,
-    time_to_complete INTERVAL,
+    time_to_complete INT,
     qr_code_hash VARCHAR(256) UNIQUE NOT NULL,
     dispensing_instructions TEXT,
     directions_of_use TEXT,
