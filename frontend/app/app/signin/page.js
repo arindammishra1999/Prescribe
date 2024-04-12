@@ -16,14 +16,22 @@ function SignInPage() {
 
   const { login } = useLogin();
 
+  const roleApiMapping = {
+    Patient: "Patient",
+    Doctor: "Prescriber",
+    Pharmacist: "Pharmacy" 
+  };
+
   const onSubmit = async () => {
-    login(id, password, role)
+    const apiRole = roleApiMapping[role];
+    
+    login(id, password, apiRole)
       .then((response) => {
         if (response) {
           if (role === "Patient") {
             router.push("/patient");
           } else if (role === "Doctor") {
-            router.push("/doctor");
+            router.push("/doctor/landingPage");
           } else if (role === "Pharmacist") {
             router.push("/pharmacist");
           }

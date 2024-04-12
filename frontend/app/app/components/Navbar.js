@@ -43,7 +43,7 @@ const Navbar = ({ tabs, options }) => {
         )}
         {/* Logout Button */}
         <div className="logout hidden md:block">
-          <a href="/logout" className="flex items-center">
+          <a href="/" className="flex items-center">
             <FaSignOutAlt />
             <span className="ml-2 text-xl">Logout</span>
           </a>
