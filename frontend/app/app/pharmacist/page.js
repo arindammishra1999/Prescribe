@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { usePharmacyNames } from '../../hooks/useGetPharmacyNames'; 
 import { useCurrentUser } from '../../hooks/useCurrentUser'; 
 
 
