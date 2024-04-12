@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-2 Create preliminary Docker files">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="dab23b77-7152-4401-b94e-245833082241" name="Changes" comment="PRES-18 Install body-parser and jsonwebtoken packages for backend services">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/app/controllers/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/app/controllers/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/app/controllers/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/app/controllers/registerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user/app/services/loginService.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user/app/services/loginService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="PRES-18" />
+        <entry key="$PROJECT_DIR$" value="PRES-21" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,19 +55,24 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PRES-20&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/rohanamjad/Downloads/Prescribe&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/services/user" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/services/user/app/controllers" />
+      <recent name="$PROJECT_DIR$/secrets/vault/policies" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -85,6 +93,9 @@
       <workItem from="1710994618496" duration="12205000" />
       <workItem from="1712034242990" duration="2949000" />
       <workItem from="1712436079581" duration="6716000" />
+      <workItem from="1712609143897" duration="33049000" />
+      <workItem from="1712733433055" duration="9187000" />
+      <workItem from="1712808931603" duration="2123000" />
     </task>
     <task id="LOCAL-00001" summary="PRES-2 Setup basic Express.js and Next.js project structure">
       <option name="closed" value="true" />
@@ -126,7 +137,71 @@
       <option name="project" value="LOCAL" />
       <updated>1712441466901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="PRES-18 Add new instructions for creating JWT keys, and a Vault AppRole. Create new AppRole policies, and update Dockerfiles">
+      <option name="closed" value="true" />
+      <created>1712609799368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712609799368</updated>
+    </task>
+    <task id="LOCAL-00007" summary="PRES-18 Fix docker-compose.override.yml prescription service environment variables">
+      <option name="closed" value="true" />
+      <created>1712610334313</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712610334317</updated>
+    </task>
+    <task id="LOCAL-00008" summary="PRES-18 Update Vault to listen on all addresses">
+      <option name="closed" value="true" />
+      <created>1712619707071</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712619707073</updated>
+    </task>
+    <task id="LOCAL-00009" summary="PRES-18 Install dependencies and setup nodemon in the development environment for better dev workflow">
+      <option name="closed" value="true" />
+      <created>1712621791670</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712621791671</updated>
+    </task>
+    <task id="LOCAL-00010" summary="PRES-18 Fix README.md instructions for setting up Vault and Postgres database">
+      <option name="closed" value="true" />
+      <created>1712655027894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712655027894</updated>
+    </task>
+    <task id="LOCAL-00011" summary="PRES-18 Reduce the Vault database role TTL and the AppRole token TTL in README.md">
+      <option name="closed" value="true" />
+      <created>1712722492571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712722492571</updated>
+    </task>
+    <task id="LOCAL-00012" summary="PRES-18 Install body-parser and jsonwebtoken packages for backend services">
+      <option name="closed" value="true" />
+      <created>1712723811773</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712723811773</updated>
+    </task>
+    <task id="LOCAL-00013" summary="PRES-21 Change 'type' to 'role' in loginController.js and loginService.js">
+      <option name="closed" value="true" />
+      <created>1712807921714</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712807921714</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +224,15 @@
     <MESSAGE value="PRES-17 Refactor Dockerfiles for improved alignment with Production and Development environments" />
     <MESSAGE value="PRES-17 Update docker-compose.prod.yml to build the database service using target base" />
     <MESSAGE value="PRES-17 Update docker-compose.override.yml to build the user, prescription, and frontend services using target base" />
-    <option name="LAST_COMMIT_MESSAGE" value="PRES-17 Update docker-compose.override.yml to build the user, prescription, and frontend services using target base" />
+    <MESSAGE value="PRES-18 Add new instructions for creating JWT keys, and a Vault AppRole. Create new AppRole policies, and update Dockerfiles" />
+    <MESSAGE value="PRES-18 Fix docker-compose.override.yml prescription service environment variables" />
+    <MESSAGE value="PRES-18 Update Vault to listen on all addresses" />
+    <MESSAGE value="PRES-18 Install dependencies and setup nodemon in the development environment for better dev workflow" />
+    <MESSAGE value="PRES-18 Fix README.md instructions for setting up Vault and Postgres database" />
+    <MESSAGE value="PRES-18 Reduce the Vault database role TTL and the AppRole token TTL in README.md" />
+    <MESSAGE value="PRES-18 Install body-parser and jsonwebtoken packages for backend services" />
+    <MESSAGE value="PRES-21 Change 'type' to 'role' in loginController.js and loginService.js" />
+    <MESSAGE value="PRES-24 Add default_pharmacy field to Patient in Database and update patient.js model in User service" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRES-24 Add default_pharmacy field to Patient in Database and update patient.js model in User service" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPills } from "@fortawesome/free-solid-svg-icons";
+
 const PrescriptionCard = ({ prescription }) => {
   return (
     <div className="max-w-sm rounded-3xl overflow-hidden shadow-lg bg-teal-900 text-white w-64 h-48">
@@ -21,15 +22,17 @@ const PrescriptionCard = ({ prescription }) => {
           <h6 className="text-xl">{prescription.date}</h6>
         </div>
       </div>
-      <div className="w-full p-3 h-fit">
-        <div
-          className={`${
-            prescription.status === "Not Sent" ? "bg-red-200" : "bg-green-200"
-          } h-8 rounded-3xl flex items-center justify-center text-black`}
-        >
-          <h6 className="text-center text-xl">{prescription.status}</h6>
+      {prescription.status && (
+        <div className="w-full p-3 h-fit">
+          <div
+            className={`${
+              prescription.status === "Not Sent" ? "bg-red-200" : "bg-green-200"
+            } h-8 rounded-3xl flex items-center justify-center text-black`}
+          >
+            <h6 className="text-center text-xl">{prescription.status}</h6>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

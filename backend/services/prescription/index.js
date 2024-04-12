@@ -1,10 +1,17 @@
-const express = require('express');
-const app = express();
+const app = require('./app');
+const vaultService = require('./app/services/vaultService.js');
 
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+async function main() {
+    try {
+        await vaultService.getJwtRsaPrivateKey();
+        await vaultService.getJwtRsaPublicKey();
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+main().then(() => {
+    app.listen(3000, () => {
+        console.log('Listening on port 3000');
+    });
 });
