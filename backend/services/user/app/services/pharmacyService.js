@@ -1,4 +1,4 @@
-const Pharmacy = require('../models/pharmacy');
+const Pharmacy = require('../models/pharmacy.js');
 
 async function getAllPharmaciesService() {
     const pharmacies = await Pharmacy.findAll({
