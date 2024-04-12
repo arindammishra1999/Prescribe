@@ -1,5 +1,6 @@
 import React from "react";
 import { Fredoka } from "next/font/google";
+import { AuthProvider } from "../context/AuthContext";
 const fredoka = Fredoka({
   subsets: ["latin"],
   weight: "700",
@@ -17,7 +18,7 @@ export default function LoginLayout({ children }) {
             Prescribe
           </h1>
         </div>
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </div>
     </div>
   );
