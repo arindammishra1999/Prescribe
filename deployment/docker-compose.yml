@@ -13,7 +13,7 @@ services:
       context: ../database
       dockerfile: Dockerfile
     ports:
-      - "5432:5432"
+      - "3004:5432"
     depends_on:
       - vault
   user:
