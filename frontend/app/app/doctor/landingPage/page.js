@@ -1,15 +1,41 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import DoctorLayout from "../layout";
 import { FiSearch } from "react-icons/fi";
+import { useCurrentUser } from "../../../hooks/useCurrentUser"; 
+import { useLogout } from "../../../hooks/useLogout";
+import { FaSignOutAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 function DoctorLandingPage() {
-    const doctorName = "Dr. Adam";
+    const userData = useCurrentUser();
+    const router = useRouter();
+    const { logout } = useLogout();
+
+    console.log(userData);
+    var doctorName =  null;
+
+    if (userData) {
+        logout();
+        doctorName = userData.data.user.last_name
+    }
+
+    const handleLogout = () => {
+        router.push("/");
+
+    };
 
     return (
         <DoctorLayout>
             <div className="flex flex-col items-center justify-center">
+                <div className="absolute top-0 left-0 m-4">
+                    <button onClick={handleLogout} className="flex items-center text-teal-900 p-4">
+                        <FaSignOutAlt className="mr-2 text-xl" />
+                        <span className="text-lg">Logout</span>
+                    </button>
+                </div>
                 <h1 className="text-4xl sm:text-2xl mb-20 mt-20 font-bold">
-                    Welcome {doctorName}!
+                    Welcome Dr { doctorName || "Loading Doctor Name"}!
                 </h1>
                 <h2 className="text-2xl mb-4">Search Patient</h2>
                 <div className="relative flex items-center mb-40">
