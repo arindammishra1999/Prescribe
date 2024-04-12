@@ -77,7 +77,7 @@ npm install
     vault secrets enable database
     ```
 
-9. Configure the database connection details:
+9. Configure the database connection details, replace `<temporary-password>` with the password you set in step 1:
     ```shell
     vault write database/config/prescribe \
     plugin_name="postgresql-database-plugin" \
@@ -116,18 +116,6 @@ npm install
 14. You should not use the root token for any other operations. Instead, create a new token with the required policies
     and use that token for all operations.
 
-## Database Schema Initialization and Seed Data
-
-1. Running `docker compose up -d` will automatically run the database schema initialization and seed data scripts
-   through the `docker-entrypoint-initdb.d` directory in the `database` image. Please refer to the `Dockerfile`
-   in `./database` for more information.
-
-__Please Note__: The database schema initialization and seed data scripts are run using `init.sql` and `seed.sql`
-which can be found in the `./database` directory. If you need to make any changes to the schema or seed data, please
-make the changes in the `init.sql` and `seed.sql` files and then run `docker compose up -d` to apply the changes.
-All `argon2` hashes in the seed data resolve to the plaintext `password`, including the QR code hashes.
-You must use the required `argon2` library in `./backend/services/user/package.json` to verify hashes.
-
 ## Set up the JWT (JSON Web Token) public and private key pair
 
 The backend services will use these pair of keys to sign and validate all JWTs.
@@ -155,14 +143,14 @@ __Please Note:__ You will need the `openssl` package installed on your host mach
     vault secrets enable -version=2 kv
     ```
 
-5. Save the private key in Vault:
+5. Save the private key in Vault, ensure that you paste the new line characters as well:
     ```shell
     vault kv put -mount=kv jwt-rsa-private private_key="<Paste the contents of private.key here>"
     ```
    __Please Note:__ You must copy the contents of the `private.key` file __EXACTLY__ as they are, including all headers,
    footers, and new line characters.
 
-6. Save the public key in Vault:
+6. Save the public key in Vault, ensure that you paste the new line characters as well:
     ```shell
     vault kv put -mount=kv jwt-rsa-public public_key="<Paste the contents of public.key here>"
     ```
@@ -236,3 +224,15 @@ You can now start the application using `docker compose` from the `deployment` d
 ```bash
 docker compose up -d
 ```
+
+## Database Schema Initialization and Seed Data
+
+1. Running `docker compose up -d` will automatically run the database schema initialization and seed data scripts
+   through the `docker-entrypoint-initdb.d` directory in the `database` image. Please refer to the `Dockerfile`
+   in `./database` for more information.
+
+__Please Note__: The database schema initialization and seed data scripts are run using `init.sql` and `seed.sql`
+which can be found in the `./database` directory. If you need to make any changes to the schema or seed data, please
+make the changes in the `init.sql` and `seed.sql` files and then run `docker compose up -d` to apply the changes.
+All `argon2` hashes in the seed data resolve to the plaintext `password`, including the QR code hashes.
+You must use the required `argon2` library in `./backend/services/user/package.json` to verify hashes.
