@@ -111,7 +111,7 @@ npm install
      ```
     You should see the credentials for the database. You can login to the database using the new credentials.
 
-13. You can test the dynamic credentials by logging into the database using the following command:
+13. (OPTIONAL) You can test the dynamic credentials by logging into the database using the following command:
      ```bash
      docker exec -it deployment-database-1 psql -U <dynamic-username> -W -d prescribe
      ```

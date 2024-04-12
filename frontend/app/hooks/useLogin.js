@@ -13,9 +13,7 @@ export const useLogin = () => {
       .then((response) => {
         console.log(response);
         return {
-          user: response.data.user,
-          token: response.data.token,
-          role: response.data.role,
+          data: response.data
         };
       })
       .catch((error) => {
