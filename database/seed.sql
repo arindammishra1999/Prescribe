@@ -20,6 +20,6 @@ VALUES
 
 INSERT INTO Prescriptions (patient_health_card_number, prescriber_practitioner_id, pharmacy_license_number, drug_identification_number, drug_name, refills, status, date_issued, time_to_complete, qr_code_hash, dispensing_instructions, directions_of_use, medication_details)
 VALUES
-('HCN1234567', 'PRAC1234', 'LIC123456', 'ABC123', 'Medicine A', 3, 'Pending', '2024-03-21', 3, '$argon2id$v=19$m=65536,t=3,p=4$WWOVLzHV81cNPP0JFYnA6g$a3l2L4x1URh6SmlD6Pw9k6U9GvX4EsQcw3PZ5nCEank', 'Take one tablet by mouth daily', 'Take with food', 'Dosage: 10mg'),
-('HCN2345678', 'PRAC2345', 'LIC234567', 'XYZ456', 'Medicine B', 2, 'Filled', '2024-03-20', 7, '$argon2id$v=19$m=65536,t=3,p=4$k3Vjz+rOc7mgNqo3/0lEZw$gf4bGVGJ/fPYVQJ0rbIyJV4UieKKEO8QCp8BaPCQ/wc', 'Take two tablets by mouth twice a day', 'Take with water', 'Dosage: 20mg'),
-('HCN3456789', 'PRAC3456', 'LIC345678', 'DEF789', 'Medicine C', 1, 'Ready', '2024-03-19', 5, '$argon2id$v=19$m=65536,t=3,p=4$wrgqIEohRqdDSc09QmWuxw$L82lsOyPI6YpJ119cwWyG2a2QbzSIZl0TVJh2B9F0Lk', 'Take as directed by physician', 'Take before bedtime', 'Dosage: 30mg');
+('HCN1234567', 'PRAC1234', 'LIC123456', 'ABC123', 'Medicine A', 3, 'pending', '2024-03-21', 3, '$argon2id$v=19$m=65536,t=3,p=4$WWOVLzHV81cNPP0JFYnA6g$a3l2L4x1URh6SmlD6Pw9k6U9GvX4EsQcw3PZ5nCEank', 'Take one tablet by mouth daily', 'Take with food', 'Dosage: 10mg'),
+('HCN2345678', 'PRAC2345', 'LIC234567', 'XYZ456', 'Medicine B', 2, 'filled', '2024-03-20', 7, '$argon2id$v=19$m=65536,t=3,p=4$k3Vjz+rOc7mgNqo3/0lEZw$gf4bGVGJ/fPYVQJ0rbIyJV4UieKKEO8QCp8BaPCQ/wc', 'Take two tablets by mouth twice a day', 'Take with water', 'Dosage: 20mg'),
+('HCN3456789', 'PRAC3456', 'LIC345678', 'DEF789', 'Medicine C', 1, 'ready', '2024-03-19', 5, '$argon2id$v=19$m=65536,t=3,p=4$wrgqIEohRqdDSc09QmWuxw$L82lsOyPI6YpJ119cwWyG2a2QbzSIZl0TVJh2B9F0Lk', 'Take as directed by physician', 'Take before bedtime', 'Dosage: 30mg');

@@ -8,9 +8,11 @@ async function createPrescriptionService(prescriptionDetails) {
     const month = date.getMonth();
     const year = date.getFullYear();
     const date_issued = `${year}-${month}-${day}`;
+    const status = prescriptionDetails.status.toLowerCase();
 
     prescriptionDetails.qr_code_hash = qr_code_hash;
     prescriptionDetails.date_issued = date_issued;
+    prescriptionDetails.status = status;
 
     try {
         const prescription = await Prescription.create(prescriptionDetails);
@@ -26,6 +28,10 @@ async function updatePrescriptionService(id, prescriptionDetails) {
 
     if (!prescription) {
         return {prescription: null, error: 'Prescription not found'};
+    }
+
+    if (prescriptionDetails.status) {
+        prescriptionDetails.status = prescriptionDetails.status.toLowerCase();
     }
 
     try {
