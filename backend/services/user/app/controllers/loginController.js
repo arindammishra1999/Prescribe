@@ -26,7 +26,7 @@ const loginController = async (req, res) => {
                 return res.status(500).send({error: error});
             }
             console.log(`Token: ${token} created for ${user.id}`);
-            return res.status(200).send({token, user: authUser, role: role.toLocaleString()});
+            return res.status(200).send({token, user: authUser, role: role.toLowerCase()});
         });
     } catch (error) {
         console.error(error);
