@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 const app = express();
-const bodyParser = require('body-parser');
+app.use(cors());
+const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
-app.use('/api', require('./routes.js'));
+app.use("/api", require("./routes.js"));
 
 module.exports = app;
-
