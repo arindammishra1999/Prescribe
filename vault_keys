@@ -1,0 +1,31 @@
+Unseal Key 1: O3oSbiSrVyRtR1LUDus8OLdjfE5UW77aKJECk9xUHmP5
+Unseal Key 2: s+cGo8K1NFPgLbGqHQd9WX/0BKuVLVT0SOierrzDB5FH
+Unseal Key 3: uXTVodqi7PnIi/RgjtYskXUhidapQfVVrRENAi076B3k
+Unseal Key 4: uqaOsTL026YBqFVY7b8VW9pEzouzhsHCVQLMB5J/krsj
+Unseal Key 5: htp/SPER3CXuv8BLVFKTeJj/x4HLGpmxTNtR5LofeeNE
+
+Initial Root Token: hvs.Ptv1Bfc4rV1g0P4Y52MrlEU6
+
+
+vault write database/config/prescribe \
+plugin_name="postgresql-database-plugin" \
+allowed_roles="db-admin" \
+connection_url="postgresql://{{username}}:{{password}}@database:5432/prescribe?sslmode=disable" \
+username=root \
+password=1234
+
+vault kv put -mount=kv jwt-rsa-public public_key="-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwVpMP036OBsf1noI/B4Q
+xwWGjpEFi67ZRzZoSWwEz2iuANTKhHeNGAzQl7rjjzcKpb2aR3Da8FTFDpp4/Mbm
+Oej6zLucfWjmT3ACEUj3HyE7djiZOAgEvYiMpUWrN5tRw99a+qChMYfa4yDR5w9f
+rGpPqsTlp5NIMDSn9yayqQcFTRgi7XPnsG80YGkzgW62ZuY9HZE0lUVuuV2ymu4Z
+yxqd3jUjuuoKrpdGph39xBqtujrVOOgljSrOtmsQl/KLk7wqHefrND3CYmqC8/4b
+os5DAXz/oaiIL9pmSOu1DLrCqikRj5e/yAfcHNdWoufHs2vxCjsqn1tcQRkgXkjr
+gwIDAQAB
+-----END PUBLIC KEY-----
+"
+
+
+Role & Secret IDs
+secret_id             5959d0cb-7d34-216f-5de6-bd84749d86fd
+role_id    78e5de83-837d-8da0-2add-b05a1001b928
