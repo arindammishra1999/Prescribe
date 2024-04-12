@@ -43,7 +43,7 @@ npm install
 
 2. Bring up the database and Vault services using `docker compose` from the `deployment` directory:
 
-__Note:__ Ignore any warnings.
+    __Note:__ Ignore any warnings.
 
     ```bash
     docker compose up -d database vault
@@ -63,7 +63,7 @@ __Note:__ Ignore any warnings.
    root token to a local file, you will need them to unseal Vault every time you restart the container (do not share or
    commit these keys to the git repository).
 
-6. Unseal Vault using the following command and the unseal keys from step 5:
+6. Unseal Vault using the following command and the unseal keys from step 5 (This command must be ran three times total):
     ```shell
     vault operator unseal
     ```
