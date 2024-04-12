@@ -31,14 +31,16 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <div className="flex flex-col-reverse md:flex-row w-full h-full">
+    <div className="flex flex-col-reverse md:flex-row h-screen w-screen">
       {/* Navbar at the bottom for mobile, on the side for larger screens */}
-      <div className="md:w-64 md:h-screen">
+      <div className="h-20 w-screen md:w-64 md:h-screen">
         <Navbar tabs={tabs} />
       </div>
 
       {/* Main content */}
-      <div className="w-full bg-white flex-1">{children}</div>
+      <div className="w-full h-full bg-white md:h-full overflow-y-scroll">
+        {children}
+      </div>
     </div>
   );
 };
