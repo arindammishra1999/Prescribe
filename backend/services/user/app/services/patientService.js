@@ -1,4 +1,4 @@
-const Patient = require('../models/Patient.js');
+const Patient = require('../models/patient.js');
 
 async function getAllPatientsService() {
     const patients = await Patient.findAll({

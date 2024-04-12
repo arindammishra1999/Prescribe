@@ -1,6 +1,6 @@
-const Patient = require('../models/Patient.js');
-const Prescriber = require('../models/Prescriber.js');
-const Pharmacy = require('../models/Pharmacy.js');
+const Patient = require('../models/patient.js');
+const Prescriber = require('../models/prescriber.js');
+const Pharmacy = require('../models/pharmacy.js');
 const argon = require('argon2');
 
 async function register(user, role, model) {
