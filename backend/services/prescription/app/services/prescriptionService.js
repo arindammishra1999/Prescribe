@@ -43,7 +43,20 @@ async function updatePrescriptionService(id, prescriptionDetails) {
     }
 }
 
+async function getPrescriptionByQRService(qrCodeHash) {
+    const prescription = await Prescription.findOne({
+        where: {qr_code_hash: qrCodeHash},
+    });
+
+    if (!prescription) {
+        return {prescription: null, error: 'Prescription not found'};
+    }
+
+    return {prescription: prescription, error: null};
+}
+
 module.exports = {
     createPrescriptionService,
-    updatePrescriptionService
+    updatePrescriptionService,
+    getPrescriptionByQRService
 };

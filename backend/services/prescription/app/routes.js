@@ -9,6 +9,7 @@ const {
 const {
     createPrescriptionController,
     updatePrescriptionController,
+    getPrescriptionByQRController
 } = require('./controllers/prescriptionController.js');
 const authorizeMiddleware = require('./middleware/authorizeMiddleware.js');
 const router = require('express').Router();
@@ -19,5 +20,6 @@ router.get('/pharmacy/:id/prescriptions', authorizeMiddleware(['pharmacy']), get
 router.get('/pharmacy/:id/prescription/:status', authorizeMiddleware(['pharmacy']), getPrescriptionsByStatusAndPharmacyIdController);
 router.post('/prescriptions', authorizeMiddleware(['prescriber']), createPrescriptionController);
 router.put('/prescription/:id', authorizeMiddleware(['prescriber', 'pharmacy']), updatePrescriptionController);
+router.get('/prescription-qr/', authorizeMiddleware(['pharmacy']), getPrescriptionByQRController);
 
 module.exports = router;
