@@ -28,7 +28,7 @@ const Navbar = ({ tabs, options }) => {
                 href={tab.link}
                 className="flex md:flex-row flex-col items-center md:justify-center md:text-3xl"
               >
-                <div className="text-xl">{tab.icon}</div>
+                <div className="text-3xl">{tab.icon}</div>
                 <span className="md:ml-2">{tab.title}</span>{" "}
                 {/* Ensure text alignment */}
               </a>
