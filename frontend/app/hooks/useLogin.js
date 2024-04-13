@@ -13,14 +13,13 @@ export const useLogin = () => {
       .then((response) => {
         console.log(response);
         return {
-          data: response.data
+          data: response.data,
         };
       })
       .catch((error) => {
         console.log("error: ", error);
         return null;
       });
-    console.log("user is: ", user);
     if (user) {
       Cookies.set("currentUser", JSON.stringify(user));
     }

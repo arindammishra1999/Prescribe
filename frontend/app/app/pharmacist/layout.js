@@ -4,6 +4,8 @@ import { FaRegClock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { LuPlusCircle } from "react-icons/lu";
 import { AiOutlineQrcode } from "react-icons/ai"; // Assuming you have an icon for QR codes
+import { MdNotificationsActive } from "react-icons/md";
+
 
 const Layout = ({ children }) => {
   // Define the tabs
@@ -24,9 +26,14 @@ const Layout = ({ children }) => {
       icon: <FaUser />,
     },
     {
-      title: "Scan QR Code", // Add the title for your QR code scanner
-      link: "/scan",        // Link to the path you'll handle QR code scanning
-      icon: <AiOutlineQrcode />, // Replace with your QR code icon
+      title: "Scan QR Code", 
+      link: "/scan",      
+      icon: <AiOutlineQrcode />, 
+    },
+    {
+      title: "Active Orders", 
+      link: "/pharmacist/activeOrders",       
+      icon: <MdNotificationsActive />, 
     },
   ];
 

@@ -10,7 +10,7 @@ function patientProfilePage() {
     const router = useRouter();
 
     const handleBack = () => {
-        router.push("/doctor/landingPage");
+        router.push("/doctor");
     };
 
     useEffect(() => {

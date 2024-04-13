@@ -1,6 +1,16 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useLogout } from "../../hooks/useLogout";
 const Navbar = ({ tabs, options }) => {
+  const router = useRouter();
+  const { logout } = useLogout();
+
+  const handleLogout = () => {
+    logout();
+    router.push("/");
+  };
   return (
     <div className="bottom-0 z-10 w-screen md:w-64 flex flex-row pt-3 text-black md:flex-col border-black border-2 bg-white md:justify-between md:h-screen md:p-8 md:bg-teal-900 md:text-white">
       <div className="logo hidden md:block">
@@ -43,7 +53,7 @@ const Navbar = ({ tabs, options }) => {
         )}
         {/* Logout Button */}
         <div className="logout hidden md:block">
-          <a href="/" className="flex items-center">
+          <a className="flex items-center" onClick={handleLogout}>
             <FaSignOutAlt />
             <span className="ml-2 text-xl">Logout</span>
           </a>
