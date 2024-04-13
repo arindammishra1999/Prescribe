@@ -17,15 +17,18 @@ const NewOrdersPage = () => {
   }
 
   const handleClick = (prescriptionIndex) => {
-    localStorage.setItem("myOrder", JSON.stringify(prescriptions[prescriptionIndex]))
-    router.push('/pharmacist/newOrders/acceptOrder')
+    // Only run this code on the client-side
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("myOrder", JSON.stringify(prescriptions[prescriptionIndex]));
+      router.push('/pharmacist/newOrders/acceptOrder');
+    }
   }
 
   return (
     <div className="px-8 pt-8 pb-0 flex flex-col justify-start md:justify-end items-center min-h-full gap-4">
       <div className="logo md:hidden justify-self-start">
         <h1 className="text-4xl text-center font-bold font-fredoka text-teal-900">
-        Prescribe
+          Prescribe
         </h1>
       </div>
       <div className="md:px-8 md:pt-8 md:pb-0 flex-col justify-center items-center w-full">
