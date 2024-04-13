@@ -16,7 +16,7 @@ const router = require('express').Router();
 router.post('/login', loginController);
 router.post('/register', registerController);
 router.get('/patients', authorizeMiddleware(['prescriber']), getAllPatientsController);
-router.get('/patient/:id', authorizeMiddleware(['prescriber']), getPatientByIdController);
+router.get('/patient/:id', authorizeMiddleware(['prescriber', 'pharmacy']), getPatientByIdController);
 router.put('/patient/:id/update-default-pharmacy', authorizeMiddleware(['patient']), updateDefaultPharmacyController);
 router.get('/patient-qr/', authorizeMiddleware(['prescriber']), getPatientByQRController);
 router.get('/pharmacies', authorizeMiddleware(['patient', 'prescriber', 'pharmacy']), getAllPharmaciesController);
