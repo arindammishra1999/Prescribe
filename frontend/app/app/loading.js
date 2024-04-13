@@ -10,7 +10,7 @@ export default function Loading() {
         height: "100vh",
       }}
     >
-      <Circles height={300} width={300} color="#4fa94d" visible={true} />
+      <Circles height={300} width={300} color="#0f766e" visible={true} />
     </div>
   );
 }

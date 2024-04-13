@@ -1,19 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPills } from "@fortawesome/free-solid-svg-icons";
 import { QRCodeSVG } from "qrcode.react";
+import { useCurrentUser } from "../../hooks/useCurrentUser";
+import { usePrescriptions } from "../../hooks/usePrescriptions";
+
 const Page = () => {
-  // Mock data for demonstration
-  const recentTransaction = {
-    date: "2023-03-30",
-    amount: "$100",
-    description: "Payment Received",
-  };
+  const { prescriptions } = usePrescriptions();
+  const user = useCurrentUser();
 
   const userInfo = {
     fullName: "John Doe",
     // More user info can be added here
   };
+
+  useEffect(() => {
+    console.log("user", user);
+    console.log(prescriptions("HCN1234567", user?.data?.token));
+  }, [user]);
 
   return (
     <div className="mx-auto p-4 flex flex-col justify-center items-center min-h-screen gap-4">
