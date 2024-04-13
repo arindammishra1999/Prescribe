@@ -1,13 +1,12 @@
 "use client";
 import React from 'react';
-import { getNewOrders } from "../../../hooks/useGetNewOrders";
+import { getOrders } from "../../../hooks/useGetOrders";
 
 
 const NewOrdersPage = () => {
-  const { prescriptions, error } = getNewOrders();
   
-  console.log('Prescriptions:', prescriptions);
-
+  const { prescriptions, error } = getOrders("pending");
+  
   if (error) {
     return <div>Error fetching prescriptions: {error.message}</div>;
   }
