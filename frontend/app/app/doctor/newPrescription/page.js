@@ -18,30 +18,51 @@ const Page = () => {
                     placeholder="Find a drug"
                     className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
                 />
-                <FiSearch className="absolute right-0 top-0 mt-2 mr-2 w-6 h-6 cursor-pointer" />
             </div>
 
-            <h4 className="ml-2 mb-2">Dose</h4>
+            <h4 className="ml-2 mb-2">Drug Identification Number</h4>
+            <div className="relative flex items-center mb-5">
+            <input
+                            type="text"
+                            value={"ADV12345"}
+                            readOnly
+                            className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
+                        />
+            </div>
+
+            <h4 className="ml-2 mb-2">Refills</h4>
             <div className="relative flex items-center mb-5">
                 <FiMinus className="absolute left-0 top-0 mt-2 ml-2 w-6 h-6 cursor-pointer" />
                 <input
                     type="text"
-                    placeholder="500 mg"
                     className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 text-center"
                 />
                 <FiPlus className="absolute right-0 top-0 mt-2 mr-2 w-6 h-6 cursor-pointer" />
             </div>
 
-            <h4 className="ml-2 mb-2">Days</h4>
-            <div className="relative flex items-center mb-10">
-                <FiMinus className="absolute left-0 top-0 mt-2 ml-2 w-6 h-6 cursor-pointer" />
+            <h4 className="ml-2 mb-2">Dispensing instructions</h4>
+            <div className="relative flex items-center mb-5">
                 <input
                     type="text"
-                    placeholder="7 days"
-                    className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 text-center"
+                    className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
                 />
-                <FiPlus className="absolute right-0 top-0 mt-2 mr-2 w-6 h-6 cursor-pointer" />
             </div>
+            <h4 className="ml-2 mb-2">Directions of Use</h4>
+            <div className="relative flex items-center mb-5">
+                <input
+                    type="text"
+                    className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
+                />
+            </div>
+            <h4 className="ml-2 mb-2">Medication details</h4>
+            <div className="relative flex items-center mb-5">
+                <input
+                    type="text"
+                    className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
+                />
+            </div>
+
+
 
             <div className="w-full">
                 <button className="bg-teal-700 text-white py-2 px-4 rounded-full w-full">
