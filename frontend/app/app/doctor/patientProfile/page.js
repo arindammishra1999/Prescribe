@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import DoctorLayout from "../layout";
 import { FiArrowLeft } from "react-icons/fi";
-import { useRouter } from "next/Navigation";
+import { useRouter } from "next/navigation";
 
 function patientProfilePage() {
     const [patientName, setPatientName] = useState("");
