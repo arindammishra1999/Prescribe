@@ -1,29 +1,47 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import DoctorLayout from "../layout";
 import { FiSearch } from "react-icons/fi";
 import { useCurrentUser } from "../../../hooks/useCurrentUser"; 
 import { useLogout } from "../../../hooks/useLogout";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { usePatientDetails } from "../../../hooks/usePatientDetails";
 
 function DoctorLandingPage() {
     const userData = useCurrentUser();
     const router = useRouter();
     const { logout } = useLogout();
+    const [healthID, setHealthID] = useState("");
+    const [token, setToken] = useState("");
+
+    const { patientDetails, loading, error } = usePatientDetails(healthID, token);
+
+    console.log("Patient Details:", patientDetails);
 
     console.log(userData);
     var doctorName =  null;
 
     if (userData) {
-        logout();
         doctorName = userData.data.user.last_name
     }
 
     const handleLogout = () => {
+        logout();
         router.push("/");
 
     };
+
+    const handleSearch = () => {
+        const userToken = userData.data.token;
+        setToken(userToken);
+        if (patientDetails) {
+            localStorage.setItem("patientDetails", JSON.stringify(patientDetails));
+            router.push("/doctor/patientProfile");
+        } else {
+            console.log("Patient details not found.");
+        }
+      };
 
     return (
         <DoctorLayout>
@@ -42,9 +60,11 @@ function DoctorLandingPage() {
                     <input
                         type="text"
                         placeholder="Enter Health ID"
+                        value={healthID}
+                        onChange={(e) => setHealthID(e.target.value)}
                         className="border border-gray-400 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700 flex-1 pr-10"
                     />
-                    <FiSearch className="absolute right-0 top-0 mt-2 mr-2 w-6 h-6 cursor-pointer" />
+                    <FiSearch  onClick={handleSearch} className="absolute right-0 top-0 mt-2 mr-2 w-6 h-6 cursor-pointer" />
                 </div>
                 <div className="mt-50 w-full">
                     <button className="bg-teal-700 text-white py-2 px-4 rounded-full w-full">
