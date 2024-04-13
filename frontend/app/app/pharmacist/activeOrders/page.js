@@ -3,9 +3,8 @@ import React from 'react';
 import { getOrders } from "../../../hooks/useGetOrders";
 
 
-const NewOrdersPage = () => {
-  
-  const { prescriptions, error } = getOrders("pending");
+const ActiveOrdersPage = () => {
+  const { prescriptions, error } = getOrders("accepted");
   
   if (error) {
     return <div>Error fetching prescriptions: {error.message}</div>;
@@ -24,7 +23,7 @@ const NewOrdersPage = () => {
       </div>
       <div className="md:px-8 md:pt-8 md:pb-0 flex-col justify-center items-center w-full">
         <h1 className="text-xl font-bold text-center md:text-4xl md:text-left font-sfProDisplay md:font-medium md:mb-8">
-            New Orders
+            Active Orders
         </h1>
       </div>
       <div className="px-0 md:px-8 pt-0 pb-8 flex grow w-full h-0">
@@ -44,4 +43,4 @@ const NewOrdersPage = () => {
   );
 };
 
-export default NewOrdersPage;
+export default ActiveOrdersPage;
