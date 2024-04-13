@@ -36,9 +36,9 @@ const PastOrdersPage = () => {
                         <button class="order-4 md:order-3 bg-lime-200 hover:bg-lime-400 text-black md:py-2 md:px-4 rounded-full w-full md:w-3/20 md:text-xl mt-5 md:mt-0">
                         {order.Status.toUpperCase()}
                         </button>
-                        <h1 className="order-3 md:hidden text-white font-style:  text-base">Date Fulfilled {order.Date}</h1>
+                        <h1 className="order-3 md:hidden text-white font-style:  text-base">Date Issued {order.date_issued}</h1>
                     </div>
-                    <h1 className="hidden md:block text-white font-style: text-lg ">Date Fulfilled {order.Date}</h1>
+                    <h1 className="hidden md:block text-white font-style: text-lg ">Date Issued {order.date_issued}</h1>
                 </div>
             ))}
             </div>
