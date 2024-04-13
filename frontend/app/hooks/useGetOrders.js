@@ -1,10 +1,11 @@
+// hooks/useGetOrders.js
 import { useState, useEffect } from 'react';
 import Cookies from "js-cookie";
-import { prescriptionInstance } from "../services/axiosInstances";
+import { prescriptionInstance, instance } from "../services/axiosInstances";
 
-export const getOrders = (status) => {
-  const [prescriptions, setPrescriptions] = useState(null);
+const getOrders = (status) => {
   const [error, setError] = useState(null);
+  const [prescriptions, setPrescriptions] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,20 +14,32 @@ export const getOrders = (status) => {
       }
 
       const cookieData = JSON.parse(Cookies.get("currentUser"));
-      const token = cookieData.token;
-      const pharmacyId = cookieData.user.license_number;
+      const token = cookieData.data.token;
+      const pharmacyId = cookieData.data.user.license_number;
 
       try {
-        const response = await prescriptionInstance.get(`/pharmacy/${pharmacyId}/prescription/${status}`, {
+        const responsePrescription = await prescriptionInstance.get(`/pharmacy/${pharmacyId}/prescription/${status}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
-        console.log('Response:', response);
-        if (response.data.prescriptions) {
-          setPrescriptions(response.data.prescriptions);
+        const prescriptionsData = responsePrescription.data.prescriptions;
+
+        if (prescriptionsData && prescriptionsData.length) {
+          const updatedPrescriptionsArray = await Promise.all(prescriptionsData.map(async (prescription) => {
+            const responsePatient = await instance.get(`/patient/${prescription.patient_health_card_number}`, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            });
+            return {
+              ...prescription,
+              name: responsePatient.data.first_name + ' ' + responsePatient.data.last_name,
+            };
+          }));
+          setPrescriptions(updatedPrescriptionsArray);
         } else {
-          setPrescriptions({});
+          setPrescriptions([]);
         }
       } catch (err) {
         console.error('Error fetching prescriptions:', err);
@@ -39,3 +52,5 @@ export const getOrders = (status) => {
 
   return { prescriptions, error };
 };
+
+export default getOrders;

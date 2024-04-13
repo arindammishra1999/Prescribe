@@ -1,11 +1,12 @@
 "use client";
 import React from 'react';
-import { getOrders } from "../../../hooks/useGetOrders";
-
+import getOrders from "../../../hooks/useGetOrders";
+import { useRouter } from 'next/navigation'
 
 const NewOrdersPage = () => {
   
   const { prescriptions, error } = getOrders("pending");
+  const router = useRouter();
   
   if (error) {
     return <div>Error fetching prescriptions: {error.message}</div>;
@@ -13,6 +14,11 @@ const NewOrdersPage = () => {
 
   if (!prescriptions) {
     return <div>Loading prescriptions...</div>;
+  }
+
+  const handleClick = (prescriptionIndex) => {
+    localStorage.setItem("myOrder", JSON.stringify(prescriptions[prescriptionIndex]))
+    router.push('/pharmacist/newOrders/acceptOrder')
   }
 
   return (
@@ -32,10 +38,10 @@ const NewOrdersPage = () => {
           {prescriptions.map((prescription, index) => (
             <div key={index} className="flex flex-col md:flex-row md:justify-between md:m-4 md:p-8 bg-teal-800 rounded-3xl p-4 items-center">
               <h1 className="text-white font-style: italic md:text-lg text-base order-2 md:order-1">Prescription ID: {prescription.prescription_id}</h1>
-              <p className="text-white md:text-4xl text-2xl order-1 md:order-2 font-bold">{prescription.patientName}</p>
-              <button className="bg-lime-200 hover:bg-lime-400 text-black md:py-2 md:px-4 rounded-full w-full md:w-3/20 md:text-xl order-3 mt-5 md:mt-0">
-                View
-              </button>
+              <p className="text-white md:text-4xl text-2xl order-1 md:order-2 font-bold">{prescription.name}</p>
+                <button className="bg-lime-200 hover:bg-lime-400 text-black md:py-2 md:px-4 rounded-full w-full md:w-3/20 md:text-xl order-3 mt-5 md:mt-0" onClick={() => handleClick(index)}>
+                  View
+                </button>
             </div>
           ))}
         </div>

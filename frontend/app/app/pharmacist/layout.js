@@ -21,19 +21,14 @@ const Layout = ({ children }) => {
       icon: <FaRegClock />,
     },
     {
+        title: "Active Orders", 
+        link: "/pharmacist/ordersInProgress",       
+        icon: <MdNotificationsActive />, 
+    },
+    {
       title: "Account",
       link: "/pharmacist/account",
       icon: <FaUser />,
-    },
-    {
-      title: "Scan QR Code", 
-      link: "/scan",      
-      icon: <AiOutlineQrcode />, 
-    },
-    {
-      title: "Active Orders", 
-      link: "/pharmacist/activeOrders",       
-      icon: <MdNotificationsActive />, 
     },
   ];
 

@@ -1,10 +1,11 @@
 "use client";
 import React from 'react';
-import { getOrders } from "../../../hooks/useGetOrders";
+import  getOrders from "../../../hooks/useGetOrders";
 
 
-const ActiveOrdersPage = () => {
-  const { prescriptions, error } = getOrders("accepted");
+const NewOrdersPage = () => {
+  
+  const { prescriptions, error } = getOrders("filled");
   
   if (error) {
     return <div>Error fetching prescriptions: {error.message}</div>;
@@ -43,4 +44,4 @@ const ActiveOrdersPage = () => {
   );
 };
 
-export default ActiveOrdersPage;
+export default NewOrdersPage;

@@ -10,30 +10,10 @@ import { useState } from "react";
 
 
 const acceptOrderPage = () => {
-  // Mock data for demonstration
-  const viewedOrder = 
-    {
-      name: 'John Doe',
-      OrderNumber: '123456789',
-      drugName: "DRUG Z",
-      dosage: "500 mg",
-      days: "7",
-      refill: "3",
-      DIN: "1234567"
-
-    }
-    const [prescriptions, setPrescriptions] = useState([
-        {
-          id: 1,
-          name: "Drug Z",
-          din: "1234567",
-          dosage: "500 mg",
-          days: "7",
-          refills: "3",
-          date: "February 21st, 2023",
-
-        }
-      ]);
+  // Mock data for d    emonstration
+  
+  const viewedOrder = JSON.parse(localStorage.getItem("myOrder"));
+  const prescriptions = [ viewedOrder ]
 
   return (
     <div className="px-8 pt-8 pb-0 flex flex-col justify-start md:justify-end items-center min-h-full bg-white">
@@ -51,24 +31,24 @@ const acceptOrderPage = () => {
             {/* Green Border */}
             <div className="mx-auto flex flex-col p-4 md:p-8 items-center w-full border-4 border-teal-800 rounded-3xl">
                 <div className="flex flex-row items-center mb-8 justify-between w-full">
-                    <p className="text-black text-2xl md:text-4xl font-bold">{viewedOrder.name}</p>
-                    <p className="text-black text-sm md:text-2xl italic">Order#: {viewedOrder.OrderNumber}</p>
+                    <p className="text-black text-2xl md:text-4xl font-bold">{viewedOrder.drug_name}</p>
+                    <p className="text-black text-sm md:text-2xl italic">Date Issued: {viewedOrder.date_issued}</p>
                 </div>
                 {/*Drug Info Space Div Desktop*/}
                 <div class="hidden md:flex flex-col md:grow bg-teal-800 w-full p-8 rounded-3xl mb-8">
                     <div className="flex flex-row items-center m-auto justify-between w-full">
                         <div className="flex flex-row items-center justify-start w-full">
                                 <FontAwesomeIcon icon={faPills} size="4x" color="white" className="" />
-                                <p className="flex md:grow ml-5 text-white text-5xl font-bold">{viewedOrder.drugName}</p>
+                                <p className="flex md:grow ml-5 text-white text-5xl font-bold">{viewedOrder.drug_name}</p>
                         </div>
-                        <p className="whitespace-nowrap text-white text-2xl font-light italic">DIN: {viewedOrder.DIN}</p>
+                        <p className="whitespace-nowrap text-white text-2xl font-light italic">DIN: {viewedOrder.drug_identification_number}</p>
                     </div>
                     {/* Drug Card for Desktop*/}
                     <div className="flex flex-col w-full">
                         <div className="flex flex-col mb-2 mt-2">
-                            <p className="text-white text-2xl font-normal">Dosage: {viewedOrder.dosage}</p>
-                            <p className="text-white text-2xl font-normal">Days: {viewedOrder.days}</p>      
-                            <p className="text-white text-2xl font-normal">Refill: {viewedOrder.refill}</p> 
+                            <p className="text-white text-2xl font-normal">{viewedOrder.medication_details}</p>
+                            <p className="text-white text-2xl font-normal">Days: {viewedOrder.time_to_complete}</p>      
+                            <p className="text-white text-2xl font-normal">Refill: {viewedOrder.refills}</p> 
                         </div>
                     </div>
                 </div>
@@ -80,7 +60,7 @@ const acceptOrderPage = () => {
                         ))}
                     </div>
                 </div>
-                <div className="relative flex items-center my-5">
+                <div className="relative flex items-center my-5 max-w-full">
                     <FiMinus className="absolute left-0 top-0 mt-2 ml-2 w-6 h-6 cursor-pointer" />
                     <input
                         type="text"

@@ -10,7 +10,7 @@ const Page = () => {
   var pharmacyName =  null;
 
   if (userData) {
-    pharmacyName = userData.user.name
+    pharmacyName = userData.data.user.name
   }
 
 
