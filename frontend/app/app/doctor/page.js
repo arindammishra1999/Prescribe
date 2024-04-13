@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import DoctorLayout from "../layout";
+import DoctorLayout from "./layout";
 import { FiSearch } from "react-icons/fi";
-import { useCurrentUser } from "../../../hooks/useCurrentUser"; 
-import { useLogout } from "../../../hooks/useLogout";
+import { useCurrentUser } from "../../hooks/useCurrentUser"; 
+import { useLogout } from "../../hooks/useLogout";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { usePatientDetails } from "../../../hooks/usePatientDetails";
+import { usePatientDetails } from "../../hooks/usePatientDetails";
 
 function DoctorLandingPage() {
     const userData = useCurrentUser();

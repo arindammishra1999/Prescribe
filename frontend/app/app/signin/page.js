@@ -30,7 +30,7 @@ function SignInPage() {
           if (role === "Patient") {
             router.push("/patient");
           } else if (role === "Doctor") {
-            router.push("/doctor/landingPage");
+            router.push("/doctor");
           } else if (role === "Pharmacist") {
             router.push("/pharmacist");
           }
