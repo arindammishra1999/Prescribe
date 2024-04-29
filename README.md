@@ -241,3 +241,18 @@ which can be found in the `./database` directory. If you need to make any change
 make the changes in the `init.sql` and `seed.sql` files and then run `docker compose up -d` to apply the changes.
 All `argon2` hashes in the seed data resolve to the plaintext `password`, including the QR code hashes.
 You must use the required `argon2` library in `./backend/services/user/package.json` to verify hashes.
+
+## Some App screenshots
+
+<div style="display: flex;">
+  <img src="App%20photos/1.png" alt="App Photo 1" style="width: 300px; margin-right: 20px;">
+  <img src="App%20photos/2.png" alt="App Photo 2" style="width: 300px; margin-right: 20px; margin-top: -10px">
+  <img src="App%20photos/3.png" alt="App Photo 3" style="width: 300px;">
+    <img src="App%20photos/4.png" alt="App Photo 4" style="width: 300px; margin-right: 20px;">
+  <img src="App%20photos/5.png" alt="App Photo 5" style="width: 300px; margin-right: 20px;">
+  <img src="App%20photos/6.png" alt="App Photo 6" style="width: 300px;">
+      <img src="App%20photos/7.png" alt="App Photo 3" style="width: 300px;">
+    <img src="App%20photos/8.png" alt="App Photo 4" style="width: 300px; margin-right: 20px;">
+  <img src="App%20photos/9.png" alt="App Photo 5" style="width: 300px; margin-right: 20px;">
+  <img src="App%20photos/10.png" alt="App Photo 6" style="width: 300px;">
+</div>
